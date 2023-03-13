@@ -1,6 +1,13 @@
+if game.PlaceId == 2512643572 then
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Auto Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
+OrionLib:MakeNotification({
+	Name = "[🍀MEGA LUCK🍀] Bubble Gum Simulator",
+	Content = "Game loaded!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
 
 --Values
 _G.autoBlowBubbles = true
@@ -21,14 +28,14 @@ end
 function autoHatch()
     while _G.autoHatch == true do
         game:GetService("ReplicatedStorage").NetworkRemoteEvent:FireServer("PurchaseEgg", _G.selectEgg)
-        wait(3)      
+        wait(1)      
 end
 end
 
 function autoMultiHatch()
     while _G.autoMultiHatch == true do
         game:GetService("ReplicatedStorage").NetworkRemoteEvent:FireServer("PurchaseEgg", _G.selectEgg, "Multi")
-        wait(3)      
+        wait(1)      
 end
 end
 
@@ -55,6 +62,11 @@ local FarmTab = Window:MakeTab({
 
 local EggTab = Window:MakeTab({
 	Name = "Eggs",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local PetTab = Window:MakeTab({
+	Name = "Pets",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
