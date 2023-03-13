@@ -103,7 +103,7 @@ EggTab:AddDropdown({
 	end    
 })
 TeleportTab:AddDropdown({
-    Name = "Teleports"
+    Name = "Teleports",
     Default = "The Floating Island",
     Options = {"The Floating Island", "Space", "The Twilight"},
     Callback = function(Value)
