@@ -204,7 +204,7 @@ local Section = AutoTab:AddSection({
 })
 
 --labels
-Tab:AddLabel("The options for the rebirths are in order, 1 being 1 rebirth, 5 being 10 rebirths, 10 being 500 rebirths and so on.")
+AutoTab:AddLabel("The options for the rebirths are in order, 1 being 1 rebirth, 5 being 10 rebirths, 10 being 500 rebirths and so on.")
 
 --Toggles
 AutoTab:AddToggle({
