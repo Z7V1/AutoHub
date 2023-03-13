@@ -26,10 +26,12 @@ end
 
 function sellBubbles()
     game:GetService("ReplicatedStorage").NetworkRemoteEvent:FireServer("Teleport", "Sell")
+    wait(0.1)
 end
 
 function teleport()
     game:GetService("ReplicatedStorage").NetworkRemoteEvent:FireServer("TeleportToCheckpoint", _G.teleportSelect)
+    wait(0.1)
 end
 		
 --Tabs
@@ -63,10 +65,12 @@ local Section = FarmTab:AddSection({
 local Section = EggTab:AddSection({
 	Name = "Egg Stuff"
 })
+local Section = TeleportTab:AddSection({
+    Name = "Teleports"
+})
 local Section = SettingsTab:AddSection({
 	Name = "Settings"
 })
-
 --Toggles
 FarmTab:AddToggle({
 	Name = "Auto Blow Bubbles",
@@ -116,7 +120,7 @@ FarmTab:AddButton({
     end
 })
 TeleportTab:AddButton({
-	Name = "Sell Bubbles",
+	Name = "Teleport",
 	Callback = function()
             teleport()
     end
