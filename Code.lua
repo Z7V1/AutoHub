@@ -39,6 +39,11 @@ local EggTab = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
+local SettingsTab = Window:MakeTab({
+	Name = "Settings",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
 
 --Sections
 local Section = FarmTab:AddSection({
@@ -47,6 +52,9 @@ local Section = FarmTab:AddSection({
 
 local Section = EggTab:AddSection({
 	Name = "Egg Stuff"
+})
+local Section = SettingsTab:AddSection({
+	Name = "Settings"
 })
 
 --Toggles
@@ -87,4 +95,13 @@ FarmTab:AddButton({
 	Callback = function()
             sellBubbles()
     end
+})
+
+--ColorPicker
+SettingsTab:AddColorpicker({
+	Name = "Colorpicker",
+	Default = Color3.fromRGB(255, 0, 0),
+	Callback = function(Value)
+		print(Value)
+	end	  
 })
