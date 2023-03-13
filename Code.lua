@@ -104,8 +104,8 @@ EggTab:AddDropdown({
 })
 TeleportTab:AddDropdown({
     Name = "Teleports"
-    Default = "The Floating Island"
-    Options = {"The Floating Island", "Space", "The Twilight"}
+    Default = "The Floating Island",
+    Options = {"The Floating Island", "Space", "The Twilight"},
     Callback = function(Value)
         _G.teleportSelect = Value
         print(_G.teleportSelect)
