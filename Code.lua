@@ -21,14 +21,14 @@ end
 function autoHatch()
     while _G.autoHatch == true do
         game:GetService("ReplicatedStorage").NetworkRemoteEvent:FireServer("PurchaseEgg", _G.selectEgg)
-        wait(5)      
+        wait(3)      
 end
 end
 
 function autoMultiHatch()
     while _G.autoMultiHatch == true do
         game:GetService("ReplicatedStorage").NetworkRemoteEvent:FireServer("PurchaseEgg", _G.selectEgg, "Multi")
-        wait(5)      
+        wait(3)      
 end
 end
 
