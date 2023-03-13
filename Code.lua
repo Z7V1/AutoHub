@@ -72,9 +72,6 @@ local Section = EggTab:AddSection({
 local Section = TeleportTab:AddSection({
     Name = "Teleports"
 })
-local Section = TeleportTab:AddSection({
-    Name = "Other Teleports"
-})
 local Section = SettingsTab:AddSection({
 	Name = "Settings"
 })
