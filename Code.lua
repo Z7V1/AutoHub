@@ -6,6 +6,7 @@ local Window = OrionLib:MakeWindow({Name = "Auto Hub", HidePremium = false, Save
 _G.autoBlowBubbles = true
 _G.autoHatch = true
 _G.selectEgg = "Common Egg"
+_G.teleportSelect = "The Floating Island"
 
 --Functions
 
@@ -26,6 +27,10 @@ end
 function sellBubbles()
     game:GetService("ReplicatedStorage").NetworkRemoteEvent:FireServer("Teleport", "Sell")
 end
+
+function teleport()
+    game:GetService("ReplicatedStorage").NetworkRemoteEvent:FireServer("TeleportToCheckpoint", _G.teleportSelect)
+end
 		
 --Tabs
 local FarmTab = Window:MakeTab({
@@ -36,6 +41,11 @@ local FarmTab = Window:MakeTab({
 
 local EggTab = Window:MakeTab({
 	Name = "Eggs",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local TeleportTab = Window:MakeTab({
+	Name = "Teleports",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -88,6 +98,15 @@ EggTab:AddDropdown({
         print(_G.selectEgg)
 	end    
 })
+TeleportTab:AddDropdown({
+    Name = "Teleports"
+    Default = "The Floating Island"
+    Options = {"The Floating Island", "Space", "The Twilight"}
+    Callback = function(Value)
+        _G.teleportSelect = Value
+        print(_G.teleportSelect)
+    end
+})
 
 --Buttons
 FarmTab:AddButton({
@@ -96,10 +115,16 @@ FarmTab:AddButton({
             sellBubbles()
     end
 })
+TeleportTab:AddButton({
+	Name = "Sell Bubbles",
+	Callback = function()
+            teleport()
+    end
+})
 
 --ColorPicker
 SettingsTab:AddColorpicker({
-	Name = "Colorpicker",
+	Name = "UI Color Changer",
 	Default = Color3.fromRGB(255, 0, 0),
 	Callback = function(Value)
 		print(Value)
