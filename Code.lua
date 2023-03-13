@@ -96,7 +96,7 @@ EggTab:AddToggle({
 EggTab:AddDropdown({
 	Name = "Eggs",
 	Default = "Common Egg",
-	Options = {"Common Egg", "Spotted Egg", "Ice Shard Egg", "Spikey Egg", "Magma Egg", "Crystal Egg", "Lunar Egg", "Void Shard Egg", "Hell Egg", "Nightmare Egg", "Rainbow Egg"},
+	Options = {"Common Egg", "Spotted Egg", "Ice Shard Egg", "Spikey Egg", "Magma Egg", "Crystal Egg", "Lunar Egg", "Void Shard Egg", "Hell Egg", "Nightmare Egg", "Rainbow Egg", "Frosted Egg", },
 	Callback = function(Value)
         _G.selectEgg = Value
         print(_G.selectEgg)
@@ -105,7 +105,7 @@ EggTab:AddDropdown({
 TeleportTab:AddDropdown({
     Name = "Teleports",
     Default = "The Floating Island",
-    Options = {"The Floating Island", "Space", "The Twilight"},
+    Options = {"The Floating Island", "Space", "The Twilight", "The Skylands", "The Void", "XP Island", "Zen", "Gumdrop Island", "Reward Island", "Sugar Island", "Candy Island", "Sweet Island", ""},
     Callback = function(Value)
         _G.teleportSelect = Value
         print(_G.teleportSelect)
