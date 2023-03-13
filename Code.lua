@@ -1,3 +1,4 @@
+if game.PlaceId == 2512643572 then
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Auto Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
@@ -81,6 +82,9 @@ local Section = EggTab:AddSection({
 local Section = TeleportTab:AddSection({
     Name = "Teleports"
 })
+local Section = TeleportTab:AddSection({
+	Name = "Other Teleports"
+})
 local Section = SettingsTab:AddSection({
 	Name = "Settings"
 })
@@ -125,7 +129,7 @@ EggTab:AddDropdown({
         print(_G.selectEgg)
 	end    
 })
-TeleportTab:AddDropdown({
+TeleportTab: AddDropdown({
     Name = "Teleports",
     Default = "The Floating Island",
     Options = {"The Floating Island", "Space", "The Twilight", "The Skylands", "The Void", "XP Island", "Zen"},
@@ -161,4 +165,66 @@ SettingsTab:AddColorpicker({
 	Callback = function(Value)
 		print(Value)
 	end	  
+})
+
+
+elseif game.PlaceId == 11162791099 then
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Auto Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+
+--Values
+_G.autoRebirth = true
+_G.rebirthSelect = "1"
+
+
+
+
+--Functions
+
+function autoRebirth()
+	while _G.autoRebirth == true do
+		game:GetService("ReplicatedStorage").Events.Rebirth:FireServer(_G.rebirthSelect);
+	end
+end
+
+
+
+
+
+--Tabs
+local AutoTab = Window:MakeTab({
+	Name = "Farm",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+--Sections
+local Section = AutoTab:AddSection({
+	Name = "Auto Farm"
+})
+
+
+--Toggles
+AutoTab:AddToggle({
+	Name = "Auto Rebirth",
+	Default = false,
+	Callback = function(Value)
+		_G.autoRebirth = Value
+		autoRebirth()
+	end 
+	   
+})
+
+
+--Dropdowns
+AutoTab:AddDropDown({
+	Name = "Rebirths",
+	Default = "1",
+	Options = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"}
+	Callback = function(Value)
+		_G.rebirthSelect = Value
+		print(_G.rebirthSelect)
+	end
 })
