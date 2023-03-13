@@ -5,6 +5,7 @@ local Window = OrionLib:MakeWindow({Name = "Auto Hub", HidePremium = false, Save
 --Values
 _G.autoBlowBubbles = true
 _G.autoHatch = true
+_G.autoMultiHatch = true
 _G.selectEgg = "Common Egg"
 _G.teleportSelect = "The Floating Island"
 
@@ -20,6 +21,13 @@ end
 function autoHatch()
     while _G.autoHatch == true do
         game:GetService("ReplicatedStorage").NetworkRemoteEvent:FireServer("PurchaseEgg", _G.selectEgg)
+        wait(5)      
+end
+end
+
+function autoMultiHatch()
+    while _G.autoMultiHatch == true do
+        game:GetService("ReplicatedStorage").NetworkRemoteEvent:FireServer("PurchaseEgg", _G.selectEgg, "Multi")
         wait(5)      
 end
 end
@@ -92,6 +100,16 @@ EggTab:AddToggle({
 	Callback = function(Value)
 		_G.autoHatch = Value
         autoHatch()
+	end 
+	   
+})
+
+EggTab:AddToggle({
+	Name = "Auto Multi Hatch(Must have Gamepass)",
+	Default = false,
+	Callback = function(Value)
+		_G.autoMultiHatch = Value
+        autoMultiHatch()
 	end 
 	   
 })
