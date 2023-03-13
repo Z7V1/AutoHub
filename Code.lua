@@ -1,4 +1,5 @@
 if game.PlaceId == 2512643572 then
+	--This is BubbleGumSim
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Auto Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
@@ -169,7 +170,7 @@ SettingsTab:AddColorpicker({
 
 
 elseif game.PlaceId == 11162791099 then
-
+--This is 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Auto Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
@@ -228,3 +229,7 @@ AutoTab:AddDropDown({
 		print(_G.rebirthSelect)
 	end
 })
+
+
+end
+OrionLib:Init()
