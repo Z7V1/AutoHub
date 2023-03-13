@@ -223,7 +223,7 @@ AutoTab:AddToggle({
 AutoTab:AddDropDown({
 	Name = "Rebirths",
 	Default = "1",
-	Options = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"}
+	Options = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"},
 	Callback = function(Value)
 		_G.rebirthSelect = Value
 		print(_G.rebirthSelect)
