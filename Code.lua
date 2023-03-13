@@ -187,6 +187,7 @@ _G.rebirthSelect = "1"
 function autoRebirth()
 	while _G.autoRebirth == true do
 		game:GetService("ReplicatedStorage").Events.Rebirth:FireServer(_G.rebirthSelect);
+		wait(6)
 	end
 end
 
