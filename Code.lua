@@ -191,10 +191,6 @@ function autoRebirth()
 	end
 end
 
-
-
-
-
 --Tabs
 local AutoTab = Window:MakeTab({
 	Name = "Farm",
@@ -207,6 +203,8 @@ local Section = AutoTab:AddSection({
 	Name = "Auto Farm"
 })
 
+--labels
+Tab:AddLabel("The options for the rebirths are in order, 1 being 1 rebirth, 5 being 10 rebirths, 10 being 500 rebirths and so on.")
 
 --Toggles
 AutoTab:AddToggle({
@@ -231,6 +229,12 @@ AutoTab:AddDropdown({
 	end
 })
 
+OrionLib:MakeNotification({
+	Name = "[🍀AUTO REBIRTH] Free Hatchers",
+	Content = "Game Loaded!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
 
 end
 OrionLib:Init()
