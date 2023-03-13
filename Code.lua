@@ -21,14 +21,14 @@ end
 function autoHatch()
     while _G.autoHatch == true do
         game:GetService("ReplicatedStorage").NetworkRemoteEvent:FireServer("PurchaseEgg", _G.selectEgg)
-        wait(3)      
+        wait(1)      
 end
 end
 
 function autoMultiHatch()
     while _G.autoMultiHatch == true do
         game:GetService("ReplicatedStorage").NetworkRemoteEvent:FireServer("PurchaseEgg", _G.selectEgg, "Multi")
-        wait(3)      
+        wait(1)      
 end
 end
 
@@ -105,7 +105,7 @@ EggTab:AddToggle({
 })
 
 EggTab:AddToggle({
-	Name = "Auto Multi Hatch(Must have Gamepass)",
+	Name = "Auto Multi Hatch (Must have Gamepass)",
 	Default = false,
 	Callback = function(Value)
 		_G.autoMultiHatch = Value
