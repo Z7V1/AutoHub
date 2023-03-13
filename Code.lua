@@ -33,34 +33,6 @@ function teleport()
     game:GetService("ReplicatedStorage").NetworkRemoteEvent:FireServer("TeleportToCheckpoint", _G.teleportSelect)
     wait(0.1)
 end
-function candyland()
-    game:GetService("ReplicatedStorage").NetworkRemoteEvent:FireServer("Teleport", "Candy LandSpawn")
-    wait(0.1)
-end
-function toyland()
-    game:GetService("ReplicatedStorage").NetworkRemoteEvent:FireServer("Teleport", "Toy LandSpawn")
-    wait(0.1)
-end
-function beachworld()
-    game:GetService("ReplicatedStorage").NetworkRemoteEvent:FireServer("Teleport", "Beach WorldSpawn")
-    wait(0.1)
-end
-function atlantis()
-    game:GetService("ReplicatedStorage").NetworkRemoteEvent:FireServer("Teleport", "AtlantisSpawn")
-    wait(0.1)
-end
-function rainbowland()
-    game:GetService("ReplicatedStorage").NetworkRemoteEvent:FireServer("Teleport", "Rainbow LandSpawn")
-    wait(0.1)
-end
-function underworld()
-    game:GetService("ReplicatedStorage").NetworkRemoteEvent:FireServer("Teleport", "UnderworldSpawn")
-    wait(0.1)
-end
-function mysticforest()
-    game:GetService("ReplicatedStorage").NetworkRemoteEvent:FireServer("Teleport", "Mystic ForestSpawn")
-    wait(0.1)
-end
 function event()
     game:GetService("ReplicatedStorage").NetworkRemoteEvent:FireServer("Teleport", "EventSpawn")
     wait(0.1)
@@ -158,48 +130,6 @@ TeleportTab:AddButton({
 	Name = "Teleport",
 	Callback = function()
             teleport()
-    end
-})
-TeleportTab:AddButton({
-	Name = "Candy Land Spawn",
-	Callback = function()
-            candyland()
-    end
-})
-TeleportTab:AddButton({
-	Name = "Toy Land Spawn",
-	Callback = function()
-            toyland()
-    end
-})
-TeleportTab:AddButton({
-	Name = "Beach World Spawn",
-	Callback = function()
-            beachworld()
-    end
-})
-TeleportTab:AddButton({
-	Name = "Atlantis Spawn",
-	Callback = function()
-            atlantis()
-    end
-})
-TeleportTab:AddButton({
-	Name = "Rainbow Land Spawn",
-	Callback = function()
-            rainbowland()
-    end
-})
-TeleportTab:AddButton({
-	Name = "Underworld Spawn",
-	Callback = function()
-            underworld()
-    end
-})
-TeleportTab:AddButton({
-	Name = "Mystic Forest Spawn",
-	Callback = function()
-            mysticforest()
     end
 })
 TeleportTab:AddButton({
