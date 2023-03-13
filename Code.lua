@@ -2,12 +2,7 @@ if game.PlaceId == 2512643572 then
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Auto Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
-OrionLib:MakeNotification({
-	Name = "[🍀MEGA LUCK🍀] Bubble Gum Simulator",
-	Content = "Game loaded!",
-	Image = "rbxassetid://4483345998",
-	Time = 5
-})
+
 
 --Values
 _G.autoBlowBubbles = true
@@ -172,4 +167,11 @@ SettingsTab:AddColorpicker({
 	Callback = function(Value)
 		print(Value)
 	end	  
+})
+
+OrionLib:MakeNotification({
+	Name = "[🍀MEGA LUCK🍀] Bubble Gum Simulator",
+	Content = "Game loaded!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
 })
